@@ -1,77 +1,331 @@
-// The Bakery Buena Park - Interactive Scripts
+// The Bakery Buena Park — Script
+// "Baked Fresh Daily for Our Neighbors"
 
-const mobileToggle = document.getElementById('mobileToggle');
-const navLinks = document.getElementById('navLinks');
-mobileToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); mobileToggle.classList.toggle('active'); });
-navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); mobileToggle.classList.remove('active'); }); });
+document.addEventListener('DOMContentLoaded', () => {
 
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => { if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled'); });
+    // ============================================
+    // SCROLL PROGRESS BAR
+    // ============================================
+    const scrollProgress = document.getElementById('scrollProgress');
+    function updateScrollProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+            scrollProgress.style.width = (scrollTop / docHeight) * 100 + '%';
+        }
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+    // ============================================
+    // NAVBAR SCROLL STATE
+    // ============================================
+    const navbar = document.getElementById('navbar');
+    function updateNavbar() {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }
+    window.addEventListener('scroll', updateNavbar, { passive: true });
 
-const scrollProgress = document.getElementById('scrollProgress');
-function updateScrollProgress() { const scrollTop = window.pageYOffset || document.documentElement.scrollTop; const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight; scrollProgress.style.width = (scrollTop / docHeight) * 100 + '%'; }
-window.addEventListener('scroll', updateScrollProgress);
+    // ============================================
+    // MOBILE MENU TOGGLE
+    // ============================================
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-const backToTop = document.getElementById('backToTop');
-function toggleBackToTop() { if (window.scrollY > 400) backToTop.classList.add('visible'); else backToTop.classList.remove('visible'); }
-backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-window.addEventListener('scroll', toggleBackToTop);
+    function openMobileMenu() {
+        mobileToggle.classList.add('active');
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
 
-function animateCounter(element, target, duration) { const startTime = performance.now(); function update(currentTime) { const elapsed = currentTime - startTime; const progress = Math.min(elapsed / duration, 1); const easeProgress = 1 - Math.pow(1 - progress, 3); const current = Math.floor(easeProgress * target); element.textContent = target >= 1000 ? current.toLocaleString() + '+' : current + '+'; if (progress < 1) requestAnimationFrame(update); } requestAnimationFrame(update); }
-function fadeInElement(element) { element.style.opacity = '0'; element.style.transform = 'scale(0.5)'; element.style.transition = 'all 0.6s ease'; requestAnimationFrame(() => { element.style.opacity = '1'; element.style.transform = 'scale(1)'; }); }
+    function closeMobileMenu() {
+        mobileToggle.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 
-const statsObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const el = entry.target; const count = el.getAttribute('data-count'); const suffix = el.getAttribute('data-suffix'); if (suffix) fadeInElement(el); else if (count !== null) { const target = parseInt(count, 10); if (!isNaN(target) && target > 0) { el.classList.add('counting'); animateCounter(el, target, 2000); } else fadeInElement(el); } statsObserver.unobserve(el); } }); }, { threshold: 0.5 });
-document.querySelectorAll('.stats-number[data-count]').forEach(el => statsObserver.observe(el));
-
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const parent = entry.target.parentElement; const siblings = Array.from(parent.children).filter(c => c.classList.contains('service-card') || c.classList.contains('review-card') || c.classList.contains('why-feature') || c.classList.contains('detail-card')); const idx = siblings.indexOf(entry.target); entry.target.style.animationDelay = (idx >= 0 ? idx * 0.1 : 0) + 's'; entry.target.classList.add('animate-in'); observer.unobserve(entry.target); } }); }, observerOptions);
-document.querySelectorAll('.service-card, .review-card, .why-feature, .detail-card').forEach(el => { el.style.opacity = '0'; observer.observe(el); });
-
-const heroContent = document.querySelector('.hero-content');
-function parallaxHero() { const scrolled = window.pageYOffset; if (scrolled < document.querySelector('.hero').offsetHeight) heroContent.style.transform = `translateY(${scrolled * 0.3}px)`; }
-window.addEventListener('scroll', parallaxHero);
-
-function createParticles() { const container = document.getElementById('heroParticles'); if (!container) return; for (let i = 0; i < 20; i++) { const p = document.createElement('div'); p.classList.add('hero-particle'); p.style.left = Math.random() * 100 + '%'; p.style.top = Math.random() * 100 + '%'; p.style.animationDelay = Math.random() * 4 + 's'; p.style.animationDuration = (3 + Math.random() * 3) + 's'; p.style.width = (4 + Math.random() * 6) + 'px'; p.style.height = p.style.width; container.appendChild(p); } }
-createParticles();
-
-let autoScrollInterval = null;
-function startAutoScroll() { const rg = document.getElementById('reviewsGrid'); if (!rg || window.innerWidth >= 768) return; let dir = 1; autoScrollInterval = setInterval(() => { const max = rg.scrollWidth - rg.clientWidth; if (rg.scrollLeft >= max - 2) dir = -1; else if (rg.scrollLeft <= 2) dir = 1; rg.scrollLeft += dir * 1; }, 30); }
-function stopAutoScroll() { if (autoScrollInterval) { clearInterval(autoScrollInterval); autoScrollInterval = null; } }
-function checkAutoScroll() { if (window.innerWidth < 768) { if (!autoScrollInterval) startAutoScroll(); } else stopAutoScroll(); }
-const rg = document.getElementById('reviewsGrid');
-if (rg) { rg.addEventListener('touchstart', stopAutoScroll); rg.addEventListener('touchend', () => { setTimeout(() => { if (window.innerWidth < 768) startAutoScroll(); }, 3000); }); }
-window.addEventListener('resize', checkAutoScroll); checkAutoScroll();
-
-const contactForm = document.getElementById('contactForm');
-const formFields = contactForm.querySelectorAll('input, select, textarea');
-formFields.forEach(f => { f.addEventListener('input', function() { const g = this.closest('.form-group'); if (this.value.trim().length > 0) g.classList.add('valid'); else g.classList.remove('valid'); }); f.addEventListener('blur', function() { if (this.hasAttribute('required') && this.value.trim().length === 0) this.closest('.form-group').classList.remove('valid'); }); });
-
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(this).entries());
-    const subject = encodeURIComponent(`Order - ${data.orderType || 'General'} - The Bakery Buena Park`);
-    const body = encodeURIComponent(`Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email || 'N/A'}\nOrder Type: ${data.orderType || 'N/A'}\nParty Size: ${data.partySize || 'N/A'}\nDetails: ${data.message || 'N/A'}\n\nPlease confirm my order.`);
-    window.location.href = `mailto:info@thebakerybuenapark.com?subject=${subject}&body=${body}`;
-    const btn = this.querySelector('button[type="submit"]'); const orig = btn.innerHTML;
-    btn.innerHTML = '&#10003; Order Sent!'; btn.style.background = '#10b981'; btn.style.borderColor = '#10b981';
-    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.borderColor = ''; this.reset(); formFields.forEach(f => f.closest('.form-group').classList.remove('valid')); }, 3000);
-});
-
-setTimeout(() => { document.querySelectorAll('.hero-ctas .btn').forEach(btn => btn.classList.add('btn-pulse')); }, 3000);
-
-const sections = document.querySelectorAll('section[id]');
-const navLinksList = document.querySelectorAll('.nav-links a[data-section]');
-function updateActiveNav() { const scrollPos = window.scrollY + 120; sections.forEach(s => { const top = s.offsetTop, h = s.offsetHeight, id = s.getAttribute('id'); if (scrollPos >= top && scrollPos < top + h) { navLinksList.forEach(l => { l.classList.remove('active-section'); if (l.getAttribute('data-section') === id) l.classList.add('active-section'); }); } }); }
-window.addEventListener('scroll', updateActiveNav); updateActiveNav();
-
-document.querySelectorAll('a[href^="tel:"]').forEach(link => { link.addEventListener('click', () => { if (typeof gtag === 'function') gtag('event', 'click_to_call', { business: 'The Bakery Buena Park' }); }); });
-
-window.addEventListener('load', () => {
-    ['.hero-badge', '.hero h1', '.hero-sub', '.hero-ctas', '.hero-trust'].forEach((sel, i) => {
-        const el = document.querySelector(sel);
-        if (el) { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; setTimeout(() => { el.style.transition = 'all 0.6s ease'; el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 200 + i * 200); }
+    mobileToggle.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('open')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
-    updateScrollProgress();
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+            closeMobileMenu();
+        }
+    });
+
+    // ============================================
+    // OPEN/CLOSED STATUS INDICATOR
+    // ============================================
+    const statusDot = document.getElementById('statusDot');
+    const statusText = document.getElementById('statusText');
+
+    function updateOpenStatus() {
+        const now = new Date();
+        const day = now.getDay(); // 0=Sun, 1=Mon, 2=Tue, ..., 6=Sat
+        const time = now.getHours() + now.getMinutes() / 60;
+        let isOpen = false;
+
+        // Tue-Sat: 7AM - 6PM (day 2-6)
+        if (day >= 2 && day <= 6) {
+            isOpen = time >= 7 && time < 18;
+        }
+        // Sun: 8AM - 3PM (day 0)
+        if (day === 0) {
+            isOpen = time >= 8 && time < 15;
+        }
+        // Mon: Closed (day 1)
+
+        if (statusDot && statusText) {
+            statusDot.className = isOpen ? 'status-dot' : 'status-dot closed';
+            statusText.textContent = isOpen ? 'Open Now' : 'Closed';
+            statusText.style.color = isOpen ? '#16a34a' : '#92400e';
+        }
+    }
+
+    updateOpenStatus();
+    setInterval(updateOpenStatus, 60000); // Update every minute
+
+    // ============================================
+    // DAILY SPECIALS DATE
+    // ============================================
+    const boardDate = document.getElementById('boardDate');
+    if (boardDate) {
+        const now = new Date();
+        const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+        boardDate.textContent = now.toLocaleDateString('en-US', options);
+    }
+
+    // ============================================
+    // REVEAL ON SCROLL (Intersection Observer)
+    // ============================================
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                // Optionally stop observing after reveal
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ============================================
+    // MOBILE CTA BAR (show after scrolling)
+    // ============================================
+    const mobileCtaBar = document.getElementById('mobileCtaBar');
+    if (mobileCtaBar && window.innerWidth < 1024) {
+        function updateMobileCta() {
+            mobileCtaBar.classList.toggle('visible', window.scrollY > 500);
+        }
+        window.addEventListener('scroll', updateMobileCta, { passive: true });
+    }
+
+    // ============================================
+    // BACK TO TOP BUTTON
+    // ============================================
+    const backToTop = document.getElementById('backToTop');
+
+    function updateBackToTop() {
+        backToTop.classList.toggle('visible', window.scrollY > 600);
+    }
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ============================================
+    // FORM VALIDATION
+    // ============================================
+    const form = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    if (form) {
+        const nameInput = form.querySelector('#name');
+        const phoneInput = form.querySelector('#phone');
+        const emailInput = form.querySelector('#email');
+        const nameError = document.getElementById('nameError');
+        const phoneError = document.getElementById('phoneError');
+        const emailError = document.getElementById('emailError');
+
+        // Real-time validation: remove error on valid input
+        function clearFieldError(input, errorEl) {
+            input.addEventListener('input', () => {
+                if (input.value.trim()) {
+                    input.classList.remove('error');
+                    if (errorEl) errorEl.style.display = 'none';
+                }
+            });
+            input.addEventListener('focus', () => {
+                input.classList.remove('error');
+                if (errorEl) errorEl.style.display = 'none';
+            });
+        }
+
+        clearFieldError(nameInput, nameError);
+        clearFieldError(phoneInput, phoneError);
+        if (emailInput && emailError) clearFieldError(emailInput, emailError);
+
+        // Validate individual fields
+        function validateName() {
+            const val = nameInput.value.trim();
+            if (!val || val.length < 2) {
+                nameInput.classList.add('error');
+                if (nameError) nameError.style.display = 'block';
+                return false;
+            }
+            nameInput.classList.remove('error');
+            if (nameError) nameError.style.display = 'none';
+            return true;
+        }
+
+        function validatePhone() {
+            const val = phoneInput.value.trim();
+            // Basic phone validation: at least 7 digits
+            const digits = val.replace(/\D/g, '');
+            if (!val || digits.length < 7) {
+                phoneInput.classList.add('error');
+                if (phoneError) phoneError.style.display = 'block';
+                return false;
+            }
+            phoneInput.classList.remove('error');
+            if (phoneError) phoneError.style.display = 'none';
+            return true;
+        }
+
+        function validateEmail() {
+            if (!emailInput) return true;
+            const val = emailInput.value.trim();
+            // Email is optional — only validate if filled
+            if (!val) {
+                emailInput.classList.remove('error');
+                if (emailError) emailError.style.display = 'none';
+                return true;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(val)) {
+                emailInput.classList.add('error');
+                if (emailError) emailError.style.display = 'block';
+                return false;
+            }
+            emailInput.classList.remove('error');
+            if (emailError) emailError.style.display = 'none';
+            return true;
+        }
+
+        // Blur validation
+        nameInput.addEventListener('blur', validateName);
+        phoneInput.addEventListener('blur', validatePhone);
+        if (emailInput) emailInput.addEventListener('blur', validateEmail);
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const isNameValid = validateName();
+            const isPhoneValid = validatePhone();
+            const isEmailValid = validateEmail();
+
+            if (!isNameValid || !isPhoneValid || !isEmailValid) {
+                // Scroll to first error
+                const firstError = form.querySelector('.error');
+                if (firstError) {
+                    firstError.focus();
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            // Success!
+            form.style.display = 'none';
+            if (formSuccess) {
+                formSuccess.classList.add('show');
+            }
+
+            // Reset after delay
+            setTimeout(() => {
+                form.reset();
+                form.style.display = '';
+                if (formSuccess) formSuccess.classList.remove('show');
+            }, 6000);
+        });
+    }
+
+    // ============================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                const navHeight = navbar.offsetHeight;
+                const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ============================================
+    // ACTIVE NAV LINK HIGHLIGHTING
+    // ============================================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+    function updateActiveNav() {
+        const scrollY = window.scrollY + 120;
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            if (scrollY >= top && scrollY < top + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+    // ============================================
+    // THROTTLED SCROLL HANDLER
+    // ============================================
+    let ticking = false;
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateScrollProgress();
+                updateNavbar();
+                updateBackToTop();
+                updateMobileCta && updateMobileCta();
+                updateActiveNav();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    // Override individual listeners with throttled version
+    window.removeEventListener('scroll', updateScrollProgress);
+    window.removeEventListener('scroll', updateNavbar);
+    window.removeEventListener('scroll', updateBackToTop);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
 });

@@ -3,505 +3,780 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bakery Buena Park | Fresh Baked Bread, Donuts & Custom Cakes</title>
-    <meta name="description" content="The Bakery in Buena Park, CA. Fresh baked bread, donuts, pastries, custom cakes, cookies, pies and more. Buy 6 pastries get 1 FREE. Call (714) 402-3404.">
-    <meta name="keywords" content="bakery Buena Park, donuts Buena Park, custom cakes, fresh bread, pastries, cookies, pies, breakfast bakery">
+    <title>The Bakery Buena Park | Baked Fresh Daily for Our Neighbors | Donuts, Bread & Custom Cakes</title>
+    <meta name="description" content="The Bakery in Buena Park, CA — fresh baked bread, donuts, pastries, custom cakes, cookies & pies. Baked fresh daily for over 20 years. Buy 6 pastries get 1 FREE. Call (714) 402-3404.">
+    <meta name="keywords" content="bakery Buena Park, donuts Buena Park, custom cakes Buena Park, fresh bread, pastries, cookies, pies, breakfast bakery, community bakery, sourdough, birthday cake">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2378350f'/%3E%3Ctext x='16' y='21' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-weight='900' font-size='14' fill='%23f59e0b'%3ETB%3C/text%3E%3C/svg%3E">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Bakery Buena Park — Baked Fresh Daily for Our Neighbors">
+    <meta property="og:description" content="Buena Park's beloved neighborhood bakery. Fresh bread, donuts, custom cakes & more since the early 2000s. Buy 6 pastries get 1 FREE. Call (714) 402-3404.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thebakerybuenapark.com">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="The Bakery Buena Park">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "The Bakery",
+      "alternateName": "The Bakery Buena Park",
+      "image": "",
+      "telephone": "+1-714-402-3404",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buena Park",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "15:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "100"
+      },
+      "priceRange": "$",
+      "servesCuisine": "American Bakery",
+      "sameAs": []
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <div class="top-bar-left">
-                <span class="top-bar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    <a href="tel:7144023404">(714) 402-3404</a>
-                </span>
-                <span class="top-bar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    Buena Park, CA
-                </span>
-            </div>
-            <div class="top-bar-right">
-                <span class="top-bar-item">Tue-Sat 7AM-6PM, Sun 8AM-3PM</span>
-            </div>
-        </div>
-    </div>
-
+    <!-- ========================= NAVIGATION ========================= -->
     <nav class="navbar" id="navbar">
-        <div class="container nav-inner">
+        <div class="nav-inner">
             <a href="#" class="logo">
-                <span class="logo-icon">TB</span>
+                <div class="logo-mark">TB</div>
                 <div class="logo-text">
                     <span class="logo-name">The Bakery</span>
-                    <span class="logo-tagline">Buena Park's Beloved Local Bakery</span>
+                    <span class="logo-sub">Buena Park &middot; Baked Fresh Daily</span>
                 </div>
             </a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#fresh">Our Bakes</a></li>
+                <li><a href="#specials">Daily Specials</a></li>
+                <li><a href="#community">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#regulars">Regulars</a></li>
+                <li><a href="#contact" class="nav-cta">Order Now</a></li>
+            </ul>
+
+            <div class="nav-status">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Checking...</span>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#menu" data-section="menu">Our Baked Goods</a></li>
-                <li><a href="#why-us" data-section="why-us">Why Us</a></li>
-                <li><a href="#reviews" data-section="reviews">Reviews</a></li>
-                <li><a href="#about" data-section="about">About</a></li>
-                <li><a href="#contact" class="nav-cta" data-section="contact">Order Now</a></li>
-            </ul>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#fresh">Our Bakes</a>
+            <a href="#specials">Daily Specials</a>
+            <a href="#community">Our Story</a>
+            <a href="#menu">Menu</a>
+            <a href="#regulars">Regulars</a>
+            <a href="#contact" class="mobile-menu-cta">Order Now &mdash; (714) 402-3404</a>
+        </div>
+    </div>
+
+    <!-- ========================= 1. KITCHEN WINDOW HERO ========================= -->
     <section class="hero" id="hero">
+        <div class="hero-checkered"></div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-particles" id="heroParticles"></div>
-            <div class="hero-badge">Buy 6 Pastries, Get 1 FREE</div>
-            <h1>Fresh Baked.<br><span class="highlight">Made With Love.</span></h1>
-            <p class="hero-sub">Buena Park's beloved local bakery. Fresh bread every morning, donuts that melt in your mouth, custom cakes for every occasion, and the warmest service in town. Come taste the tradition.</p>
-            <div class="hero-ctas">
-                <a href="tel:7144023404" class="btn btn-primary btn-lg btn-pulse">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    Call (714) 402-3404
-                </a>
-                <a href="#contact" class="btn btn-secondary btn-lg btn-pulse">Order Now</a>
+        <div class="hero-warmth"></div>
+
+        <!-- Floating steam particles -->
+        <div class="steam-container" aria-hidden="true">
+            <div class="steam-particle s1"></div>
+            <div class="steam-particle s2"></div>
+            <div class="steam-particle s3"></div>
+            <div class="steam-particle s4"></div>
+            <div class="steam-particle s5"></div>
+        </div>
+
+        <div class="hero-inner container">
+            <div class="hero-left">
+                <div class="hero-tag reveal">
+                    <span class="hero-tag-icon">&#127838;</span>
+                    Buena Park's Neighborhood Bakery Since the Early 2000s
+                </div>
+
+                <div class="hero-badge reveal">Buy 6 Pastries, Get 1 FREE &mdash; Every Day</div>
+
+                <h1 class="reveal stagger-1">
+                    Fresh From<br>the Oven,<br><span class="hero-accent">For Our Neighbors.</span>
+                </h1>
+
+                <p class="hero-sub reveal stagger-2">
+                    There's something about walking into a real neighborhood bakery. The warmth. The smell of fresh bread. The person behind the counter who knows your name and your usual. That's what The Bakery has been for Buena Park for over 20 years.
+                </p>
+
+                <div class="hero-actions reveal stagger-3">
+                    <a href="tel:7144023404" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Call (714) 402-3404
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-lg">Visit Us Today</a>
+                </div>
+
+                <div class="hero-meta reveal stagger-4">
+                    <span class="hero-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Buena Park, CA
+                    </span>
+                    <span class="hero-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        Tue&ndash;Sat 7AM&ndash;6PM &middot; Sun 8AM&ndash;3PM
+                    </span>
+                    <span class="hero-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        4.4 Stars on Yelp
+                    </span>
+                </div>
             </div>
-            <div class="hero-trust">
-                <div class="trust-item">
-                    <div class="trust-score">4.4</div>
-                    <div class="trust-label">Yelp Rating<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+
+            <div class="hero-right">
+                <div class="hero-kitchen-window reveal-right">
+                    <div class="kwindow-frame">
+                        <div class="kwindow-top">
+                            <div class="kwindow-oven">
+                                <div class="oven-door">
+                                    <div class="oven-glow"></div>
+                                    <div class="oven-shelf"></div>
+                                    <div class="oven-bread">&#127838;</div>
+                                    <div class="oven-bread bread2">&#127849;</div>
+                                    <div class="oven-handle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kwindow-label">Fresh From the Oven</div>
+                    </div>
                 </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score" data-count="20">20+</div>
-                    <div class="trust-label">Years Serving<br>Buena Park</div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score">7AM</div>
-                    <div class="trust-label">Fresh Baked<br>Every Morning</div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score">1 Free</div>
-                    <div class="trust-label">Pastry When<br>You Buy 6</div>
+
+                <div class="hero-stats reveal-right stagger-2">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">20+</div>
+                        <div class="hero-stat-label">Years Baking</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">50+</div>
+                        <div class="hero-stat-label">Items Daily</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">7AM</div>
+                        <div class="hero-stat-label">Doors Open</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="urgency-banner" id="urgency-banner">
+    <!-- ========================= 2. DAILY SPECIALS BOARD ========================= -->
+    <section class="specials-section" id="specials">
         <div class="container">
-            <div class="urgency-content">
-                <div class="urgency-text">
-                    <span class="urgency-label">BAKERY SPECIAL</span>
-                    <strong>Buy 6 Pastries, Get 1 FREE.</strong> Mix and match any pastries. The more you buy, the more you save!
+            <div class="section-header reveal">
+                <span class="section-tag">&#127775; Today's Specials</span>
+                <h2>What's Hot This Morning</h2>
+                <p>Our specials change with the seasons and what's fresh. Come early &mdash; once they're gone, they're gone until tomorrow.</p>
+            </div>
+
+            <div class="specials-board reveal stagger-1">
+                <div class="board-frame">
+                    <div class="board-header">
+                        <span class="board-chalk">&#9733; Today's Fresh Specials &#9733;</span>
+                        <span class="board-date" id="boardDate"></span>
+                    </div>
+                    <div class="specials-grid">
+                        <div class="special-item stagger-1">
+                            <div class="special-top">
+                                <span class="special-name">Fresh Sourdough Loaf</span>
+                                <span class="special-price">$5.99</span>
+                            </div>
+                            <div class="special-desc">Crusty outside, tangy inside. Baked this morning at 5AM.</div>
+                        </div>
+                        <div class="special-item stagger-2">
+                            <div class="special-top">
+                                <span class="special-name">Dozen Glazed Donuts</span>
+                                <span class="special-price">$10.99</span>
+                            </div>
+                            <div class="special-desc">Fluffy, golden, and perfectly sweet. A Buena Park tradition.</div>
+                        </div>
+                        <div class="special-item stagger-3">
+                            <div class="special-top">
+                                <span class="special-name">Custom Birthday Cake</span>
+                                <span class="special-price">From $35</span>
+                            </div>
+                            <div class="special-desc">Your vision. Our recipe. Unforgettable. Order 48hrs ahead.</div>
+                        </div>
+                        <div class="special-item stagger-4">
+                            <div class="special-top">
+                                <span class="special-name">Apple Pie (Whole)</span>
+                                <span class="special-price">$18.99</span>
+                            </div>
+                            <div class="special-desc">Old-fashioned flaky crust. Like grandma made. Limited daily.</div>
+                        </div>
+                        <div class="special-item special-featured stagger-5">
+                            <div class="special-tag">&#127873; DAILY DEAL</div>
+                            <div class="special-top">
+                                <span class="special-name">Buy 6 Pastries, Get 1 FREE</span>
+                            </div>
+                            <div class="special-desc">Mix and match any pastries. Every day, every time. No exceptions.</div>
+                        </div>
+                    </div>
                 </div>
-                <a href="tel:7144023404" class="btn btn-white">Call to Order</a>
             </div>
         </div>
     </section>
 
-    <section class="services" id="menu">
+    <!-- ========================= 3. FRESH FROM THE OVEN ========================= -->
+    <section class="fresh-section" id="fresh">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What We Bake</span>
-                <h2>Fresh From Our Ovens<br>To Your Table</h2>
-                <p>Every morning, our ovens fire up before sunrise to bring you the freshest baked goods in Buena Park. From artisan breads to custom cakes, everything is made with love and the finest ingredients.</p>
+            <div class="section-header reveal">
+                <span class="section-tag">&#127838; Fresh From the Oven</span>
+                <h2>Everything We Make<br>Was Baked This Morning</h2>
+                <p>No day-olds. No frozen dough. Just honest, delicious baking that starts before sunrise and ends when the last item sells out.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 6V4a2 2 0 012-2h8a2 2 0 012 2v2"/></svg>
+
+            <div class="fresh-grid">
+                <div class="fresh-card reveal stagger-1">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#127838;</span>
                     </div>
                     <h3>Fresh Baked Bread</h3>
-                    <p>Sourdough, French baguettes, wheat, rye, and specialty loaves baked fresh every morning. Crusty on the outside, soft and warm inside. The way bread should be.</p>
+                    <p>Sourdough, French baguettes, wheat, rye, and specialty loaves. Crusty on the outside, soft and warm inside. The way bread should be.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+                <div class="fresh-card reveal stagger-2">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#127849;</span>
                     </div>
                     <h3>Donuts & Pastries</h3>
-                    <p>Glazed, cake, filled, and frosted. Our donuts are a Buena Park tradition. Plus Danish pastries, cinnamon rolls, and turnovers. Come early for the best selection.</p>
+                    <p>Glazed, cake, filled, and frosted. Our donuts are a Buena Park tradition. Plus Danish pastries, cinnamon rolls, and turnovers.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <div class="fresh-card reveal stagger-3">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#127874;</span>
                     </div>
                     <h3>Custom Cakes</h3>
-                    <p>Birthday, wedding, anniversary, or any celebration. Our custom cakes are designed to your vision and taste incredible. Order at least 48 hours in advance.</p>
+                    <p>Birthday, wedding, anniversary &mdash; designed to your vision, tastes incredible. Order at least 48 hours in advance.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+                <div class="fresh-card reveal stagger-4">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#127850;</span>
                     </div>
                     <h3>Cookies & Brownies</h3>
-                    <p>Chocolate chip, oatmeal raisin, snickerdoodles, and fudgy brownies. Baked fresh daily in small batches. Perfect for snacking, gifting, or satisfying a sweet tooth.</p>
+                    <p>Chocolate chip, oatmeal raisin, snickerdoodles, and fudgy brownies. Baked fresh daily in small batches.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <div class="fresh-card reveal stagger-5">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#129383;</span>
                     </div>
                     <h3>Pies & Tarts</h3>
-                    <p>Apple, cherry, pecan, pumpkin, and seasonal fruit pies with flaky, buttery crusts. Made the old-fashioned way with real fruit and homemade fillings.</p>
+                    <p>Apple, cherry, pecan, pumpkin &mdash; flaky, buttery crusts made the old-fashioned way with real fruit and homemade fillings.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                <div class="fresh-card reveal stagger-6">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#9749;</span>
                     </div>
-                    <h3>Breakfast Items</h3>
-                    <p>Muffins, scones, croissants, and breakfast sandwiches. Start your morning right with freshly baked goodness. Coffee available too. The best breakfast in Buena Park.</p>
+                    <h3>Breakfast & Coffee</h3>
+                    <p>Muffins, scones, croissants, and breakfast sandwiches. Start your morning right with fresh baked goodness and a hot cup.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                <div class="fresh-card reveal stagger-7">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#129386;</span>
                     </div>
-                    <h3>Sandwiches & Deli</h3>
-                    <p>Fresh sandwiches made on our own bread with premium deli meats and cheeses. Turkey club, Italian sub, and more. Lunch done right, bakery style.</p>
+                    <h3>Sandwiches & Lunch</h3>
+                    <p>Fresh sandwiches made on our own bread with premium deli meats and cheeses. Turkey club, Italian sub, and more.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+                <div class="fresh-card reveal stagger-8">
+                    <div class="fresh-icon-wrap">
+                        <span class="fresh-icon">&#127872;</span>
                     </div>
                     <h3>Seasonal Specials</h3>
-                    <p>Holiday cookies, Valentine treats, Easter breads, and Thanksgiving pies. We celebrate every season with limited-time baked goods that make every occasion special.</p>
+                    <p>Holiday cookies, Valentine treats, Easter breads, and Thanksgiving pies. Every season deserves something special.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="why-us" id="why-us">
+    <!-- ========================= 4. COMMUNITY STORY ========================= -->
+    <section class="community-section" id="community">
         <div class="container">
-            <div class="why-us-grid">
-                <div class="why-us-content">
-                    <span class="section-tag">Why You'll Love Us</span>
-                    <h2>A Buena Park Tradition.<br>Baking With Heart Since Day One.</h2>
-                    <p>The Bakery is not just a place to buy bread. It is a community gathering spot where the aroma of fresh baking greets you at the door, and the person behind the counter knows your name. This is what a real neighborhood bakery feels like.</p>
-                    <div class="why-features">
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div class="community-grid">
+                <div class="community-content reveal-left">
+                    <span class="section-tag">Our Neighborhood</span>
+                    <h2>More Than a Bakery.<br>We're Part of <span class="text-gold">Buena Park.</span></h2>
+                    <p>The Bakery isn't just a place to buy bread &mdash; it's where neighbors catch up over coffee, where kids pick their first birthday cake, and where the smell of fresh baking has been welcoming people through the door for over 20 years.</p>
+                    <p>Our recipes have been in the family for generations. Real butter, fresh eggs, quality flour. No shortcuts, no preservatives. Just honest, delicious baking &mdash; the kind that makes a neighborhood feel like home.</p>
+
+                    <div class="community-values">
+                        <div class="value-item">
+                            <div class="value-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                             </div>
-                            <div>
-                                <strong>Baked Fresh Every Morning</strong>
-                                <p>Our ovens are running before the sun comes up. Every loaf, every donut, every pastry is baked fresh the day you buy it. If it is on our shelf, it was made today.</p>
-                            </div>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Family Recipes, Real Ingredients</strong>
-                                <p>Our recipes have been passed down through generations. Real butter, fresh eggs, and quality flour. No shortcuts, no preservatives. Just honest, delicious baking.</p>
+                            <div class="value-text">
+                                <strong>Made With Family Recipes</strong>
+                                <span>Passed down through generations</span>
                             </div>
                         </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div class="value-item">
+                            <div class="value-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
-                            <div>
-                                <strong>Custom Cakes For Any Occasion</strong>
-                                <p>From simple birthday cakes to elaborate wedding masterpieces, we create custom cakes that look stunning and taste even better. Your celebration deserves The Bakery.</p>
+                            <div class="value-text">
+                                <strong>Fresh Daily, Never Frozen</strong>
+                                <span>Every item baked from scratch each morning</span>
                             </div>
                         </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div class="value-item">
+                            <div class="value-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                             </div>
-                            <div>
-                                <strong>Community Roots Run Deep</strong>
-                                <p>We have been part of Buena Park for over 20 years. We know our customers by name, sponsor local events, and love being the bakery families grow up with.</p>
+                            <div class="value-text">
+                                <strong>Community Favorite 20+ Years</strong>
+                                <span>Your neighbors trust us with their celebrations</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="why-us-visual">
-                    <div class="stats-card">
-                        <div class="stats-number" data-count="20">20+</div>
-                        <div class="stats-label">Years in Buena Park</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number" data-count="50">50+</div>
-                        <div class="stats-label">Items Baked Daily</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number" data-count="7">7AM</div>
-                        <div class="stats-label">Doors Open</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number" data-count="0" data-suffix="1 Free">1 Free</div>
-                        <div class="stats-label">Pastry With Every 6</div>
+
+                <div class="community-visual reveal-right">
+                    <div class="landmark-card">
+                        <div class="landmark-badge">Neighborhood Landmark</div>
+                        <div class="landmark-title">A Buena Park Story</div>
+                        <div class="landmark-subtitle">Serving Our Neighbors Since the Early 2000s</div>
+                        <div class="landmark-timeline">
+                            <div class="timeline-entry">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-line"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">The Beginning</div>
+                                    <div class="timeline-text">First oven fired up &mdash; a family dream starts baking before sunrise</div>
+                                </div>
+                            </div>
+                            <div class="timeline-entry">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-line"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">Growing Roots</div>
+                                    <div class="timeline-text">Word spreads &mdash; neighbors make us their daily morning stop</div>
+                                </div>
+                            </div>
+                            <div class="timeline-entry">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-line"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">Celebration Central</div>
+                                    <div class="timeline-text">Custom cakes become the go-to for every birthday and anniversary</div>
+                                </div>
+                            </div>
+                            <div class="timeline-entry">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">Today</div>
+                                    <div class="timeline-text">20+ years of baking fresh for our neighbors, one loaf at a time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="community-stats">
+                        <div class="comm-stat">
+                            <span class="comm-stat-num">20+</span>
+                            <span class="comm-stat-label">Years</span>
+                        </div>
+                        <div class="comm-stat">
+                            <span class="comm-stat-num">50+</span>
+                            <span class="comm-stat-label">Items Daily</span>
+                        </div>
+                        <div class="comm-stat">
+                            <span class="comm-stat-num">4.4</span>
+                            <span class="comm-stat-label">Yelp Stars</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials" id="reviews">
+    <!-- ========================= 5. BREAKFAST & LUNCH MENU ========================= -->
+    <section class="menu-section" id="menu">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Customer Reviews</span>
-                <h2>Buena Park Loves Us.<br>Here Is The Proof.</h2>
-                <p>Real reviews from real customers who make The Bakery part of their daily routine.</p>
+            <div class="section-header reveal">
+                <span class="section-tag">&#127858; Breakfast & Lunch</span>
+                <h2>Start Your Morning.<br>Savor Your Afternoon.</h2>
+                <p>From the first cup of coffee at 7AM to the last sandwich at closing &mdash; we keep you fueled and happy all day.</p>
             </div>
-            <div class="reviews-grid" id="reviewsGrid">
-                <div class="review-card">
+
+            <div class="menu-columns">
+                <div class="menu-col reveal stagger-1">
+                    <div class="menu-col-header">
+                        <span class="menu-col-icon">&#127800;</span>
+                        Breakfast
+                        <span class="menu-col-time">7AM &ndash; 11AM</span>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Coffee (Regular or Iced)</span>
+                            <span class="menu-item-price">$2.50</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Muffin & Coffee Combo</span>
+                            <span class="menu-item-price">$4.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Croissant (Butter or Almond)</span>
+                            <span class="menu-item-price">$3.25</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Scone (Blueberry or Cranberry)</span>
+                            <span class="menu-item-price">$3.50</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Breakfast Sandwich</span>
+                            <span class="menu-item-price">$6.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Cinnamon Roll</span>
+                            <span class="menu-item-price">$3.75</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-col reveal stagger-2">
+                    <div class="menu-col-header">
+                        <span class="menu-col-icon">&#129386;</span>
+                        Lunch
+                        <span class="menu-col-time">11AM &ndash; Close</span>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="menu-item-name">Turkey Club Sandwich</span>
+                            <span class="menu-item-price">$8.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Italian Sub</span>
+                            <span class="menu-item-price">$8.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Ham & Swiss on Sourdough</span>
+                            <span class="menu-item-price">$7.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Chicken Salad Croissant</span>
+                            <span class="menu-item-price">$8.49</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Soup of the Day</span>
+                            <span class="menu-item-price">$5.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-item-name">Half Sandwich + Soup</span>
+                            <span class="menu-item-price">$9.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= 6. OUR REGULARS ========================= -->
+    <section class="regulars-section" id="regulars">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">&#128149; Our Regulars</span>
+                <h2>The Neighbors Who<br>Keep Coming Back</h2>
+                <p>These aren't just reviews &mdash; they're stories from the people who make our bakery what it is. Real neighbors. Real words.</p>
+            </div>
+
+            <div class="regulars-grid">
+                <div class="review-card reveal stagger-1">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"Best donuts in Buena Park, period. I have been coming here every Saturday for years. The glazed donuts are perfectly fluffy and the maple bars are incredible. The staff is always so friendly and welcoming."</p>
-                    <div class="review-author">
+                    <p class="review-text">"Best donuts in Buena Park, period. I've been coming every Saturday for years. The glazed donuts are perfectly fluffy and the maple bars are incredible. The staff always remembers my order."</p>
+                    <div class="review-footer">
                         <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>5-Star Review</span>
+                        <div class="review-author">
+                            <strong>Yelp Verified</strong>
+                            <span>5-Star Review &middot; Buena Park</span>
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal stagger-2">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"Ordered a custom birthday cake and it turned out beautifully. The design was exactly what I wanted and the cake was moist and delicious. The buttercream frosting was heavenly. Highly recommend for custom cakes!"</p>
-                    <div class="review-author">
-                        <div class="review-avatar">V</div>
-                        <div>
-                            <strong>Verified Customer Review</strong>
-                            <span>Lisa M., Buena Park</span>
+                    <p class="review-text">"Ordered a custom birthday cake and it turned out beautifully. The design was exactly what I wanted and the cake was moist and delicious. My daughter was thrilled! Highly recommend!"</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">L</div>
+                        <div class="review-author">
+                            <strong>Lisa M.</strong>
+                            <span>Buena Park</span>
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal stagger-3">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"Their sourdough bread is outstanding. We buy two loaves every week because one disappears the same day. The breakfast sandwiches on fresh bread are the best lunch option in the area. True neighborhood gem."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>Kevin R., Fullerton</span>
+                    <p class="review-text">"Their sourdough bread is outstanding. We buy two loaves every week because one disappears the same day. The breakfast sandwiches are the best lunch in the area, hands down."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">K</div>
+                        <div class="review-author">
+                            <strong>Kevin R.</strong>
+                            <span>Fullerton</span>
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal stagger-4">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"The pies here are incredible. The apple pie has the perfect flaky crust and the filling is not too sweet. My family insists on The Bakery pies for every holiday dinner. A tradition we all look forward to."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>Patricia H., La Palma</span>
+                    <p class="review-text">"The pies here are incredible. The apple pie has the perfect flaky crust. My family insists on The Bakery pies for every holiday dinner. A tradition we all look forward to."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">P</div>
+                        <div class="review-author">
+                            <strong>Patricia H.</strong>
+                            <span>La Palma</span>
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal stagger-5">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"I love the buy 6 get 1 free deal on pastries. I always grab an assortment for the office and everyone devours them. The cinnamon rolls and turnovers are my personal favorites. Great value and even better taste."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">V</div>
-                        <div>
-                            <strong>Verified Customer Review</strong>
-                            <span>David L., Cypress</span>
+                    <p class="review-text">"I love the buy 6 get 1 free deal. I always grab an assortment for the office. The cinnamon rolls and turnovers are my personal favorites. Great value and even better taste."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">D</div>
+                        <div class="review-author">
+                            <strong>David L.</strong>
+                            <span>Cypress</span>
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal stagger-6">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-                    <p class="review-text">"This is what a real bakery should be. No fancy gimmicks, just honest, delicious baked goods made with care. The muffins are huge, the cookies are chewy, and the brownies are fudgy perfection. Love this place."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>Sandra W., Buena Park</span>
+                    <p class="review-text">"This is what a real bakery should be. No fancy gimmicks, just honest, delicious baked goods made with care. The muffins are huge and the brownies are fudgy perfection."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">S</div>
+                        <div class="review-author">
+                            <strong>Sandra W.</strong>
+                            <span>Buena Park</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="reviews-cta">
-                <p>Become part of the tradition. Visit The Bakery in Buena Park today.</p>
-                <a href="tel:7144023404" class="btn btn-primary">Call (714) 402-3404</a>
-            </div>
         </div>
     </section>
 
-    <section class="about" id="about">
+    <!-- ========================= 7. CTA ========================= -->
+    <section class="cta-section" id="cta">
+        <div class="cta-checkered"></div>
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span class="section-tag">About The Bakery</span>
-                    <h2>Buena Park's Neighborhood<br>Bakery For Over 20 Years</h2>
-                    <p>The Bakery has been a cornerstone of the Buena Park community for over two decades. What started as a small family operation has grown into the neighborhood's most beloved bakery, where generations of families start their mornings and celebrate their milestones.</p>
-                    <p>Our philosophy is simple: use real ingredients, bake with care, and treat every customer like family. We still use the same recipes our founders perfected years ago, because when something works this well, you do not change it. You just keep making it fresh every single day.</p>
-                    <p>From the first loaf of bread that comes out of our ovens at dawn to the last custom cake picked up before closing, everything we make carries the warmth and dedication that has made The Bakery a Buena Park institution.</p>
-                    <div class="trust-badges">
-                        <span class="trust-badge">Family Recipes</span>
-                        <span class="trust-badge">Fresh Daily</span>
-                        <span class="trust-badge">Community Favorite</span>
-                    </div>
-                </div>
-                <div class="about-details">
-                    <div class="detail-card">
-                        <h4>Original Family Recipes</h4>
-                        <p>Our recipes have been in the family for generations. Each one has been tested, perfected, and loved. That is why our bread, pastries, and cakes taste like nothing else in Buena Park.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4>Custom Cake Specialist</h4>
-                        <p>Whether it is a child's first birthday or a couple's 50th anniversary, we create custom cakes that become the centerpiece of your celebration. Beautiful, delicious, and unforgettable.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4>Early Bird Friendly</h4>
-                        <p>We open at 7AM because we know you want fresh baked goods for breakfast. Our early birds get the best selection, so come early and start your day the delicious way.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="cta-section">
-        <div class="container">
-            <div class="cta-content">
+            <div class="cta-content reveal">
+                <div class="cta-icon">&#127838;</div>
                 <h2>Fresh Baked Goodness<br>Is Just a Call Away.</h2>
-                <p>Whether you need bread for the week, donuts for the office, or a custom cake for a celebration, The Bakery has you covered. Call or visit us today.</p>
-                <div class="cta-buttons">
-                    <a href="tel:7144023404" class="btn btn-primary btn-lg btn-pulse">
+                <p>Whether you need bread for the week, donuts for the office, or a custom cake for a celebration &mdash; your neighborhood bakery has you covered.</p>
+                <div class="cta-actions">
+                    <a href="tel:7144023404" class="btn btn-primary btn-lg">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                         Order Now: (714) 402-3404
                     </a>
-                    <a href="#contact" class="btn btn-secondary btn-lg btn-pulse">Visit Us Today</a>
+                    <a href="#contact" class="btn btn-outline btn-lg">Visit Us Today</a>
                 </div>
                 <p class="cta-note">Buy 6 pastries, get <strong>1 FREE</strong> every day!</p>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <!-- ========================= 8. CONTACT ========================= -->
+    <section class="contact-section" id="contact">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-info reveal-left">
                     <span class="section-tag">Visit Us</span>
                     <h2>Come Taste the Tradition</h2>
-                    <p>Stop by for fresh baked goods, call ahead for custom cakes, or order catering for your next event. We are here to make every moment a little sweeter.</p>
+                    <p>Stop by for fresh baked goods, call ahead for custom cakes, or order catering for your next event. We're here to make every moment a little sweeter.</p>
+
                     <div class="contact-details">
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                            <div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            </div>
+                            <div class="contact-item-text">
                                 <strong>Phone</strong>
                                 <a href="tel:7144023404">(714) 402-3404</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="contact-item-text">
                                 <strong>Address</strong>
                                 <span>Buena Park, CA</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <div class="contact-item-text">
                                 <strong>Hours</strong>
-                                <span>Tue-Sat: 7:00 AM - 6:00 PM<br>Sun: 8:00 AM - 3:00 PM<br>Mon: Closed</span>
+                                <span>Tue&ndash;Sat: 7:00 AM &ndash; 6:00 PM<br>Sun: 8:00 AM &ndash; 3:00 PM<br>Mon: Closed</span>
                             </div>
                         </div>
                     </div>
+
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.5!2d-117.9981!3d33.8675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2a8e8e8e8e8%3A0x123456789!2sBuena+Park%2C+CA!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Bakery Buena Park Location"></iframe>
+                    </div>
                 </div>
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <h3>Place an Order</h3>
+
+                <div class="contact-form-wrapper reveal-right">
+                    <h3>Place an Order</h3>
+                    <p class="form-intro">Call us or fill out the form below. We'll confirm your order within 1 hour during business hours.</p>
+                    <form class="contact-form" id="contactForm" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="Jane Smith">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name">
+                                <span class="form-error-msg" id="nameError">Please enter your name</span>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="(714) 555-0000">
+                                <label for="phone">Phone <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(714) 555-0000" autocomplete="tel">
+                                <span class="form-error-msg" id="phoneError">Please enter a valid phone number</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="jane@email.com">
+                            <input type="email" id="email" name="email" placeholder="jane@email.com" autocomplete="email">
+                            <span class="form-error-msg" id="emailError">Please enter a valid email</span>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="orderType">Order Type</label>
                                 <select id="orderType" name="orderType">
                                     <option value="">Select type...</option>
-                                    <option value="dine-in">Dine-In</option>
                                     <option value="takeout">Takeout</option>
                                     <option value="custom-cake">Custom Cake</option>
                                     <option value="catering">Catering</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="partySize">Party Size</label>
-                                <input type="text" id="partySize" name="partySize" placeholder="e.g. 10, 25, 50+...">
+                                <label for="pickupDate">Pickup Date</label>
+                                <input type="date" id="pickupDate" name="pickupDate">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Order Details</label>
-                            <textarea id="message" name="message" rows="3" placeholder="What would you like to order?"></textarea>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us what you'd like to order..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Submit Order</button>
-                        <p class="form-note">We will confirm your order within 1 hour during business hours.</p>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full form-submit">Submit Order Request</button>
+                        <p class="form-note">We'll confirm your order by phone within 1 hour during business hours.</p>
                     </form>
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success-icon">&#9989;</div>
+                        <h4>Order Request Received!</h4>
+                        <p>We'll confirm your order by phone shortly. Thank you for choosing The Bakery!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.5!2d-117.9981!3d33.8675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2a8e8e8e8e8%3A0x123456789!2sBuena+Park%2C+CA!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="350" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
+    <!-- ========================= FOOTER ========================= -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon">TB</span>
+                    <a href="#" class="logo">
+                        <div class="logo-mark">TB</div>
                         <div class="logo-text">
                             <span class="logo-name">The Bakery</span>
-                            <span class="logo-tagline">Buena Park's Beloved Local Bakery</span>
+                            <span class="logo-sub">Baked Fresh Daily for Our Neighbors</span>
                         </div>
-                    </div>
+                    </a>
                     <p>Buena Park's neighborhood bakery for over 20 years. Fresh bread, donuts, custom cakes, and the warmest service in town.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#menu">Our Baked Goods</a></li>
-                        <li><a href="#why-us">Why Us</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#fresh">Our Bakes</a></li>
+                        <li><a href="#specials">Daily Specials</a></li>
+                        <li><a href="#community">Our Story</a></li>
+                        <li><a href="#menu">Breakfast & Lunch</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Popular Items</h4>
                     <ul>
-                        <li><a href="#menu">Fresh Bread</a></li>
-                        <li><a href="#menu">Donuts</a></li>
-                        <li><a href="#menu">Custom Cakes</a></li>
-                        <li><a href="#menu">Cookies & Brownies</a></li>
-                        <li><a href="#menu">Pies & Tarts</a></li>
+                        <li><a href="#fresh">Fresh Bread</a></li>
+                        <li><a href="#fresh">Donuts</a></li>
+                        <li><a href="#fresh">Custom Cakes</a></li>
+                        <li><a href="#fresh">Cookies & Brownies</a></li>
+                        <li><a href="#fresh">Pies & Tarts</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><a href="tel:7144023404">(714) 402-3404</a></p>
-                    <p>Buena Park, CA</p>
-                    <p>Tue-Sat: 7AM - 6PM</p>
+                    <h4>Visit Us</h4>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:7144023404">(714) 402-3404</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Buena Park, CA</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span>Tue&ndash;Sat 7AM&ndash;6PM &middot; Sun 8AM&ndash;3PM</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 The Bakery Buena Park. All rights reserved.</p>
+                <p>&copy; 2026 The Bakery Buena Park. All rights reserved. Baked with &#128149; in Buena Park, CA.</p>
             </div>
         </div>
     </footer>
 
-    <div class="mobile-cta" id="mobileCta">
-        <a href="tel:7144023404" class="btn btn-primary btn-full">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            Call to Order: (714) 402-3404
+    <!-- Mobile CTA Bar -->
+    <div class="mobile-cta-bar" id="mobileCtaBar">
+        <a href="tel:7144023404" class="mobile-cta-call">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call
         </a>
+        <a href="#contact" class="mobile-cta-order">Order Now</a>
     </div>
 
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
